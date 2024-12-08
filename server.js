@@ -15,7 +15,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Register Routes
+// Register routes
 app.use(subCategoryRoutes);
 
 const PORT = process.env.PORT || 5000;

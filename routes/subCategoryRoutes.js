@@ -1,4 +1,3 @@
-// backend/routes/subcategories.js
 import express from 'express';
 import {
   createSubCategory,
@@ -9,6 +8,7 @@ import {
 
 const router = express.Router();
 
+// Define routes
 router.post('/api/subcategories', createSubCategory);
 router.get('/api/subcategories', getSubCategories);
 router.put('/api/subcategories/:id', updateSubCategory);

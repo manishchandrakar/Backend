@@ -1,13 +1,13 @@
 // backend/controllers/subCategoryController.js
-// import SubCategory from '../models/subCategoryModel';
+import SubCategory from '../models/subCategoryModel.js';
 
 // Create Sub-category
 export const createSubCategory = async (req, res) => {
   try {
-    const {  subCategoryName, productName } = req.body;
+    const { categoryName, subCategoryName, productName } = req.body;
 
     const subCategory = await SubCategory.create({
-      
+      categoryName,
       subCategoryName,
       productName,
     });
@@ -34,7 +34,6 @@ export const updateSubCategory = async (req, res) => {
     const subCategory = await SubCategory.findById(req.params.id);
 
     if (subCategory) {
-      subCategory.categoryName = req.body.categoryName || subCategory.categoryName;
       subCategory.subCategoryName = req.body.subCategoryName || subCategory.subCategoryName;
       subCategory.productName = req.body.productName || subCategory.productName;
 
